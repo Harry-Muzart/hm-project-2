@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" 
+         xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" 
+         xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" 
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+         xmlns:appstudio="http://schemas.microsoft.com/developer/appx/2015/appstudio" 
+         IgnorableNamespaces="appstudio">
+  <Identity Name="b473a05f-b69a-43d7-9314-4b08c8df14e8" Publisher="CN=AppStudio" Version="1.0.2.1" />
+
+  <mp:PhoneIdentity PhoneProductId="58d59283-bb51-49ea-bc1d-201f9c934d00" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>AppStudio App</DisplayName>
+    <PublisherDisplayName>AppStudio</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NeuroCogFeeds.App">
+      <m3:VisualElements DisplayName="NeuroCogFeeds" Description="Use this to create an app from scratch."
+          Square150x150Logo="Assets\Logo.png"
+          Square44x44Logo="Assets\SmallLogo.png"
+          ForegroundText="light"
+          BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png" ShortName="NeuroCogFeeds">
+          <m3:ShowNameOnTiles>
+            <m3:ShowOn Tile="square150x150Logo" />
+            <m3:ShowOn Tile="wide310x150Logo" />
+          </m3:ShowNameOnTiles>
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000"/>
+        <m3:ApplicationView MinWidth="width320"/>
+        <!--Used in XAML Designer. DO NOT REMOVE-->
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+        </m3:InitialRotationPreference>
+      </m3:VisualElements>
+
+    </Application>
+  </Applications>
+
+  <!-- Microphone capability required for TextToSpeech -->
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+    
+  <appstudio:Metadata>
+    <appstudio:Item Name="appId" Value="58d59283-bb51-49ea-bc1d-201f9c934d00" />
+    <appstudio:Item Name="model" Version="1.11.1" />
+    <appstudio:Item Name="formula" Value="Win81" Version="1.12.0830.1" />
+    <appstudio:Item DataSource="Html" Version="1.0.1"/>
+    <appstudio:Item DataSource="Rss" Version="1.0.1"/>
+  </appstudio:Metadata>
+</Package>
