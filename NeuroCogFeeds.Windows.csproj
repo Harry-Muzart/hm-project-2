@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{332b82e2-4275-4670-a14b-158c93b0138f}</ProjectGuid>
+    <ProjectGuid>{949dec0b-b3f1-499c-8558-81c896bc2ab5}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NeuroCogFeeds</RootNamespace>
@@ -163,68 +163,40 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\BNTListPage.xaml">
+    <Page Include="Views\WelcomeListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Views\BNTListPage.xaml.cs">
-      <DependentUpon>BNTListPage.xaml</DependentUpon>
+    <Compile Include="Views\WelcomeListPage.xaml.cs">
+      <DependentUpon>WelcomeListPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\NobelPrizeListPage.xaml">
+    <Page Include="Views\NatureNeuroscienceCurrentListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Views\NobelPrizeListPage.xaml.cs">
-      <DependentUpon>NobelPrizeListPage.xaml</DependentUpon>
+    <Compile Include="Views\NatureNeuroscienceCurrentListPage.xaml.cs">
+      <DependentUpon>NatureNeuroscienceCurrentListPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\NobelPrizeDetailPage.xaml">
+    <Page Include="Views\NatureNeuroscienceCurrentDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Views\NobelPrizeDetailPage.xaml.cs">
-      <DependentUpon>NobelPrizeDetailPage.xaml</DependentUpon>
+    <Compile Include="Views\NatureNeuroscienceCurrentDetailPage.xaml.cs">
+      <DependentUpon>NatureNeuroscienceCurrentDetailPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\NatureNeuroscienceListPage.xaml">
+    <Page Include="Views\NatureNeuroscienceAOPListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Views\NatureNeuroscienceListPage.xaml.cs">
-      <DependentUpon>NatureNeuroscienceListPage.xaml</DependentUpon>
+    <Compile Include="Views\NatureNeuroscienceAOPListPage.xaml.cs">
+      <DependentUpon>NatureNeuroscienceAOPListPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\NatureNeuroscienceDetailPage.xaml">
+    <Page Include="Views\NatureNeuroscienceAOPDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Views\NatureNeuroscienceDetailPage.xaml.cs">
-      <DependentUpon>NatureNeuroscienceDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\NatRevNeuroListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\NatRevNeuroListPage.xaml.cs">
-      <DependentUpon>NatRevNeuroListPage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\NatRevNeuroDetailPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\NatRevNeuroDetailPage.xaml.cs">
-      <DependentUpon>NatRevNeuroDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\ComputationalNeurosciListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\ComputationalNeurosciListPage.xaml.cs">
-      <DependentUpon>ComputationalNeurosciListPage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\ComputationalNeurosciDetailPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\ComputationalNeurosciDetailPage.xaml.cs">
-      <DependentUpon>ComputationalNeurosciDetailPage.xaml</DependentUpon>
+    <Compile Include="Views\NatureNeuroscienceAOPDetailPage.xaml.cs">
+      <DependentUpon>NatureNeuroscienceAOPDetailPage.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\CognNeuroRoboticsUBhamListPage.xaml">
       <SubType>Designer</SubType>
@@ -240,6 +212,48 @@
     <Compile Include="Views\CognNeuroRoboticsUBhamDetailPage.xaml.cs">
       <DependentUpon>CognNeuroRoboticsUBhamDetailPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\NobelPrizeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\NobelPrizeListPage.xaml.cs">
+      <DependentUpon>NobelPrizeListPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\NobelPrizeDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\NobelPrizeDetailPage.xaml.cs">
+      <DependentUpon>NobelPrizeDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\NatureReviewsNeuroscienceListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\NatureReviewsNeuroscienceListPage.xaml.cs">
+      <DependentUpon>NatureReviewsNeuroscienceListPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\NatureReviewsNeuroscienceDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\NatureReviewsNeuroscienceDetailPage.xaml.cs">
+      <DependentUpon>NatureReviewsNeuroscienceDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ComputationalNeurosciListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ComputationalNeurosciListPage.xaml.cs">
+      <DependentUpon>ComputationalNeurosciListPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ComputationalNeurosciDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ComputationalNeurosciDetailPage.xaml.cs">
+      <DependentUpon>ComputationalNeurosciDetailPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\ScienceDailyHealthListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -253,6 +267,34 @@
     </Page>
     <Compile Include="Views\ScienceDailyHealthDetailPage.xaml.cs">
       <DependentUpon>ScienceDailyHealthDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ScientificAmericanListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ScientificAmericanListPage.xaml.cs">
+      <DependentUpon>ScientificAmericanListPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ScientificAmericanDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ScientificAmericanDetailPage.xaml.cs">
+      <DependentUpon>ScientificAmericanDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ScienceOfLearningNPJListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ScienceOfLearningNPJListPage.xaml.cs">
+      <DependentUpon>ScienceOfLearningNPJListPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ScienceOfLearningNPJDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Views\ScienceOfLearningNPJDetailPage.xaml.cs">
+      <DependentUpon>ScienceOfLearningNPJDetailPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

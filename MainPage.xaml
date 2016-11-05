@@ -5,57 +5,151 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:was_actions="using:AppStudio.Common.Actions"
     xmlns:was_commands="using:AppStudio.Common.Commands"
+    xmlns:was_actions="using:AppStudio.Common.Actions"
     xmlns:base="using:NeuroCogFeeds"
     xmlns:controls="using:NeuroCogFeeds.Controls"
     xmlns:vm="using:NeuroCogFeeds.ViewModels"
     mc:Ignorable="d">
-    <Grid>
+
+    <Grid Background="{StaticResource AppBackground}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
             </TransitionCollection>
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <Hub x:Name="Container" Margin="0,32,0,0" Background="{StaticResource AppBackground}" DataContext="{Binding}" HeaderTemplate="{StaticResource PageHeader}" was_commands:SectionHeaderClickCommand.Command="{Binding SectionHeaderClickCommand}">
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_Html}" IsHeaderInteractive="{Binding HasMoreItems}"
-                        DataContext="{Binding BNT}"
+        <controls:PageHeaderControl x:Name="Header" LastUpdateDateTime="{Binding LastUpdated}" ShowBackButton="False" PageHeaderType="LogoText" HeaderText="{StaticResource AppTitle}" ShowSnappedMode="False"/>
+        <Hub x:Name="Container" Grid.Row="1" Padding="0,0,0,0" Margin="0,-18,0,0" DataContext="{Binding}" was_commands:SectionHeaderClickCommand.Command="{Binding SectionHeaderClickCommand}">
+            <HubSection x:Name="WelcomeSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_Html}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="120,12,0,30"
+                        DataContext="{Binding Welcome}"
                         d:DataContext="{d:DesignData Source=/Assets/Design/DesignDataHtml.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}"
-                        DataContext="{Binding NobelPrize}"
+            <HubSection x:Name="NatureNeuroscienceCurrentSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
+                        DataContext="{Binding NatureNeuroscienceCurrent}"
                         d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}"
-                        DataContext="{Binding NatureNeuroscience}"
+            <HubSection x:Name="NatureNeuroscienceAOPSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
+                        DataContext="{Binding NatureNeuroscienceAOP}"
                         d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}"
-                        DataContext="{Binding NatRevNeuro}"
-                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}"
-                        DataContext="{Binding ComputationalNeurosci}"
-                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}"
+            <HubSection x:Name="CognNeuroRoboticsUBhamSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
                         DataContext="{Binding CognNeuroRoboticsUBham}"
                         d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
-            <HubSection Width="360" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" 
-                        ContentTemplate="{StaticResource List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}"
+            <HubSection x:Name="NobelPrizeSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
+                        DataContext="{Binding NobelPrize}"
+                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
+            <HubSection x:Name="NatureReviewsNeuroscienceSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
+                        DataContext="{Binding NatureReviewsNeuroscience}"
+                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
+            <HubSection x:Name="ComputationalNeurosciSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
+                        DataContext="{Binding ComputationalNeurosci}"
+                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
+            <HubSection x:Name="ScienceDailyHealthSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
                         DataContext="{Binding ScienceDailyHealth}"
                         d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
+            <HubSection x:Name="ScientificAmericanSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,0,30"
+                        DataContext="{Binding ScientificAmerican}"
+                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
+            <HubSection x:Name="ScienceOfLearningNPJSection" Header="{Binding Title}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}" Style="{StaticResource HubSectionStyle}"
+                        ContentTemplate="{StaticResource Panel_List_PhotoLeft}" IsHeaderInteractive="{Binding HasMoreItems}" Padding="80,12,120,30"
+                        DataContext="{Binding ScienceOfLearningNPJ}"
+                        d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}"/>
         </Hub>
-        <controls:ConnectionNotificationControl Grid.Row="1" LastUpdateDateTime="{Binding LastUpdated}" Margin="24,4,24,4" HorizontalAlignment="Right"/>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="SnappedView">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Container" Storyboard.TargetProperty="Orientation">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Orientation>Vertical</Orientation>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Header" Storyboard.TargetProperty="ShowSnappedMode">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="True"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="WelcomeSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_Html_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="WelcomeSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NatureNeuroscienceCurrentSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NatureNeuroscienceCurrentSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NatureNeuroscienceAOPSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NatureNeuroscienceAOPSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CognNeuroRoboticsUBhamSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CognNeuroRoboticsUBhamSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NobelPrizeSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NobelPrizeSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NatureReviewsNeuroscienceSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NatureReviewsNeuroscienceSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ComputationalNeurosciSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ComputationalNeurosciSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScienceDailyHealthSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScienceDailyHealthSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScientificAmericanSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScientificAmericanSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScienceOfLearningNPJSection" Storyboard.TargetProperty="ContentTemplate">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Panel_List_PhotoLeft_Snapped}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ScienceOfLearningNPJSection" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="24,10,24,10"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="FullscreenView">
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
+
     <Page.BottomAppBar>
-        <was_actions:ActionsCommandBar ClosedDisplayMode="Minimal" ActionsSource="{Binding Actions}" Visibility="{Binding HasActions, Converter={StaticResource BoolToVisibilityConverter}}"
+        <was_actions:ActionsCommandBar ActionsSource="{Binding Actions}" Visibility="{Binding HasActions, Converter={StaticResource BoolToVisibilityConverter}}"
                                        Background="{StaticResource AppBarBackground}" BorderBrush="{StaticResource AppBarBackground}" Foreground="{StaticResource AppBarForeground}"/>
     </Page.BottomAppBar>
 </base:PageBase>

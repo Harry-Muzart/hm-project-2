@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" 
-         xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" 
-         xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" 
-         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest"
+         xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest"
          xmlns:appstudio="http://schemas.microsoft.com/developer/appx/2015/appstudio" 
          IgnorableNamespaces="appstudio">
-  <Identity Name="b473a05f-b69a-43d7-9314-4b08c8df14e8" Publisher="CN=AppStudio" Version="1.0.2.1" />
-
-  <mp:PhoneIdentity PhoneProductId="58d59283-bb51-49ea-bc1d-201f9c934d00" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+    
+  <Identity Name="a5e83291-bbfa-40cd-b9a7-2414f196b75c" Publisher="CN=AppStudio" Version="1.0.3.1" />
 
   <Properties>
     <DisplayName>AppStudio App</DisplayName>
@@ -16,8 +13,8 @@
   </Properties>
 
   <Prerequisites>
-    <OSMinVersion>6.3.1</OSMinVersion>
-    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
 
   <Resources>
@@ -26,32 +23,27 @@
 
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NeuroCogFeeds.App">
-      <m3:VisualElements DisplayName="NeuroCogFeeds" Description="Use this to create an app from scratch."
-          Square150x150Logo="Assets\Logo.png"
-          Square44x44Logo="Assets\SmallLogo.png"
-          ForegroundText="light"
-          BackgroundColor="transparent">
-        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png" ShortName="NeuroCogFeeds">
-          <m3:ShowNameOnTiles>
-            <m3:ShowOn Tile="square150x150Logo" />
-            <m3:ShowOn Tile="wide310x150Logo" />
-          </m3:ShowNameOnTiles>
-        </m3:DefaultTile>
-        <m3:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000"/>
-        <m3:ApplicationView MinWidth="width320"/>
-        <!--Used in XAML Designer. DO NOT REMOVE-->
-        <m3:InitialRotationPreference>
-          <m3:Rotation Preference="portrait" />
-        </m3:InitialRotationPreference>
-      </m3:VisualElements>
+      <m2:VisualElements DisplayName="NeuroCogFeeds" Description="Use this to create an app from scratch."
+                         ForegroundText="light" 
+                         BackgroundColor="#000000"
+                         Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png">
 
+        <m2:DefaultTile ShortName="NeuroCogFeeds"
+                        Wide310x150Logo="Assets\Wide310x150Logo.png"
+                        Square70x70Logo="Assets\Square70x70Logo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000"/>
+        <m2:ApplicationView MinWidth="width320" />
+      </m2:VisualElements>
     </Application>
   </Applications>
 
-  <!-- Microphone capability required for TextToSpeech -->
   <Capabilities>
-    <Capability Name="internetClientServer" />
-    <DeviceCapability Name="microphone" />
+    <Capability Name="internetClient" />
   </Capabilities>
     
   <appstudio:Metadata>
