@@ -29,28 +29,37 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivacyViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MenuExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ImageViewer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\BNTListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\NobelPrizeListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\NobelPrizeDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureNeuroscienceListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureNeuroscienceDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\NatRevNeuroListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\NatRevNeuroDetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\ComputationalNeurosciListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\ComputationalNeurosciDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WelcomeListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureNeuroscienceCurrentListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureNeuroscienceCurrentDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureNeuroscienceAOPListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureNeuroscienceAOPDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CognNeuroRoboticsUBhamListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CognNeuroRoboticsUBhamDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NobelPrizeListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NobelPrizeDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureReviewsNeuroscienceListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NatureReviewsNeuroscienceDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ComputationalNeurosciListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ComputationalNeurosciDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ScienceDailyHealthListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ScienceDailyHealthDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ScientificAmericanListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ScientificAmericanDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ScienceOfLearningNPJListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ScienceOfLearningNPJDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sections\BNTConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sections\NobelPrizeConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sections\NatureNeuroscienceConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sections\NatRevNeuroConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Sections\ComputationalNeurosciConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\WelcomeConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\NatureNeuroscienceCurrentConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\NatureNeuroscienceAOPConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sections\CognNeuroRoboticsUBhamConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\NobelPrizeConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\NatureReviewsNeuroscienceConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\ComputationalNeurosciConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sections\ScienceDailyHealthConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\ScientificAmericanConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sections\ScienceOfLearningNPJConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PlatformCommands.cs" />
         <PRIResource Include="$(MSBuildThisFileDirectory)Strings\Resources.resw" />
   </ItemGroup>
@@ -89,7 +98,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Data\BNT.htm">
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Data\Welcome.htm">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
